@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 	@GetMapping("/ping")
 	public String ping() {
-		return "new pong";
+		return "pong" + ( System.getenv("HOSTNAME") != null ? System.getenv("HOSTNAME") : "" ).trim();
 	}
 }
